@@ -1,0 +1,68 @@
+#bookmark_button:hover {
+    background-color: inherit;
+}
+
+#bookmark_button:focus {
+    background-color: inherit;
+}
+
+#bookmark_popup {
+    z-index: 1000;
+    position: absolute;
+    display: none;
+    top: 100%;
+    right: 0%;
+    min-width: 180px;
+    float: right;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: left;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    background-color: #fff;
+    cursor:pointer;
+}
+
+html[totamjung='on'] #bookmark_popup {
+    background-color: var(-);
+}
+
+html[theme='dark'] #bookmark_popup {
+    background-color: #222;
+}
+
+html[theme='rigel'] #bookmark_popup {
+    background-color: rgb(0, 142, 182);
+}
+
+
+#bookmark_button[open='1'] #bookmark_popup {
+    display: block;
+}
+
+.bookmark-section {
+    margin: 0;
+    color: #999;
+}
+
+.bookmark-section input {
+    display: none;
+}
+
+.bookmark-section input + label::before {
+    content: url('chrome-extension://__MSG_@@extension_id__/assets/bookmark.svg');
+    text-align: bottom;
+    position: relative;
+    bottom: -7px;
+}
+
+.bookmark-section input:checked + label::before {
+    content: url('chrome-extension://__MSG_@@extension_id__/assets/bookmark_fill.svg');
+}
+
+.bookmark-section[firefox='true'] input + label::before {
+    content: url('moz-extension://__MSG_@@extension_id__/assets/bookmark.svg');
+}
+
+.bookmark-section[firefox='true'] input:checked + label::before {
+    content: url('moz-extension://__MSG_@@extension_id__/assets/bookmark_fill.svg');
+}

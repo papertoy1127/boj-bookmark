@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "BOJ Bookmark",
+  "description": ":blobaww:",
+  "version": "0.0.1",
+  "author": "cywohoy",
+  "action": {
+    "default_icon": "assets/logo.png"
+  },
+  "icons": {
+    "48": "assets/logo.png"
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/problem.js"],
+      "css": ["css/bookmark.css"],
+      "matches": ["https://www.acmicpc.net/problem/*"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "scripts/background.js",
+    "scripts": ["scripts/background.js"]
+  },
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "tabs",
+    "identity"
+  ],
+  "host_permissions": [
+    "https://www.acmicpc.net/?",
+    "https://www.acmicpc.net/*",
+    "https://solved.ac/api/v3/*"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bojbookmark@p4per.dev"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/bookmark.svg", "assets/bookmark_fill.svg"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
