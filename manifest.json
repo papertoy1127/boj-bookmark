@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "BOJ Bookmark",
-  "description": ":blobaww:",
-  "version": "0.0.1",
+  "description": "BOJ 문제 페이지에서 solved.ac 북마크에 문제를 쉽게 추가할 수 있게 해 줍니다.",
+  "version": "1.0.0",
   "author": "cywohoy",
   "action": {
     "default_icon": "assets/logo.png"
@@ -23,14 +23,7 @@
     "service_worker": "scripts/background.js",
     "scripts": ["scripts/background.js"]
   },
-  "permissions": [
-    "storage",
-    "unlimitedStorage",
-    "declarativeNetRequest",
-    "declarativeNetRequestWithHostAccess",
-    "tabs",
-    "identity"
-  ],
+  "permissions": [],
   "host_permissions": [
     "https://www.acmicpc.net/?",
     "https://www.acmicpc.net/*",
