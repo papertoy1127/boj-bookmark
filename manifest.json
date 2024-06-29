@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "BOJ Bookmark",
   "description": "BOJ 문제 페이지에서 solved.ac 북마크에 문제를 쉽게 추가할 수 있게 해 줍니다.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "cywohoy",
   "action": {
     "default_icon": "assets/logo.png"
