@@ -93,7 +93,7 @@ console.log("injected!");
     
             
             label.setAttribute('for', `bookmark-${bookmarkId}`)
-            label.innerHTML += bookmarkName
+            label.textContent = bookmarkName
             bookmarksection.appendChild(check)
             bookmarksection.appendChild(label)
             sections.push(bookmarksection)
