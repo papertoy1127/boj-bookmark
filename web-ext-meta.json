@@ -1,0 +1,11 @@
+{
+    "version": { "license": "MIT" },
+    "categories": { "firefox": ["other"] },
+    "requires_payment": false,
+    "homepage": {
+        "ko": "https://github.com/papertoy1127/boj-bookmark"
+    },
+    "support_email": {
+        "ko": "richard1909@naver.com"
+    }
+}
