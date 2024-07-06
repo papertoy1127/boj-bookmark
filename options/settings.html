@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>BOJ Bookmark</title>
+    <link rel="stylesheet" href="settings.css" />
+    <script src="/options/settings.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <span id="title">
+          <img id="title-logo" src="/assets/logoblack.png" />
+          <span id="title-text">BOJ Bookmark</span>
+        </span>
+        <div id="session">
+          <a id="login" href="https://solved.ac/login" target="_blank">로그인</a>
+        </div>
+      </header>
+      <main>
+        <span id="loading">Loading Bookmarks...</span>
+        <div id="warning" class="hidden">          
+          <svg id="warning-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M2.725 21q-.275 0-.5-.137t-.35-.363t-.137-.488t.137-.512l9.25-16q.15-.25.388-.375T12 3t.488.125t.387.375l9.25 16q.15.25.138.513t-.138.487t-.35.363t-.5.137zM12 18q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m0-3q.425 0 .713-.288T13 14v-3q0-.425-.288-.712T12 10t-.712.288T11 11v3q0 .425.288.713T12 15"/></svg>
+          <small class="mid" id="bookmark-unavailable">북마크 기능을 사용할 수 없습니다.<br>solved.ac 프로 플랜에 가입된 계정으로 로그인해주세요.</small>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

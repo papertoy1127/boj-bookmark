@@ -12,14 +12,23 @@
     display: none;
     top: 100%;
     right: 0%;
-    min-width: 180px;
     float: right;
     margin-top: 5px;
-    padding: 5px;
+    padding: 6px;
     text-align: left;
     box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
     background-color: #fff;
-    cursor:pointer;
+    cursor: pointer;
+
+    min-width: 180px;
+    min-height: 50px;
+    max-height: 180px;
+    align-items: center;
+
+    flex-direction: column;
+    align-items: start;
+
+    overflow: auto;
 }
 
 html[totamjung='on'] #bookmark_popup {
@@ -36,7 +45,7 @@ html[theme='rigel'] #bookmark_popup {
 
 
 #bookmark_button[open='1'] #bookmark_popup {
-    display: block;
+    display: flex;
 }
 
 .bookmark-section {

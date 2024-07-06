@@ -1,0 +1,96 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+body {
+    font-family: Pretendard, sans-serif;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#wrap {
+    width: 350px;
+    margin: 0 auto;
+}
+
+header {
+    position: relative;
+}
+
+.mid {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#title-logo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+}
+
+#title-text {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+#session {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    display : flex;
+    align-items : center;
+}
+
+#login {
+    color: black;
+    text-decoration: none;
+}
+
+.crop {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+#profileImg {
+    width: 32px;
+}
+
+svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+main {
+    margin: 10px 2px 2px 2px;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #eee;
+    color: #333;
+}
+
+input {
+    display: none;
+}
+
+input + label::before {
+    content: url('https://api.iconify.design/material-symbols:visibility-off.svg?color=%23666666');
+    text-align: bottom;
+    position: relative;
+    bottom: -2px;
+    margin-right: 5px;
+}
+
+input:checked + label::before {
+    content: url('https://api.iconify.design/material-symbols:visibility.svg?color=%23666666');
+}
+
+.hidden {
+    display: none;
+}

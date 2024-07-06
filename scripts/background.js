@@ -1,7 +1,11 @@
 async function verifyCredentials() {
     const res = await fetch(`https://solved.ac/api/v3/account/verify_credentials`)
     console.log(res)
-    return await res.json()
+    try {
+        return await res.json()
+    } catch {
+        return null
+    }
 }
 
 async function bookmarks() {
@@ -73,6 +77,30 @@ async function removeProblem(bookmarkId, handle, problemId) {
     }
 }
 
+async function getBookmarkActiveState(bookmarkId) {
+    const disabled = (await chrome.storage.sync.get("disabledThemes")).disabledThemes;
+    if (disabled == undefined) {
+        await chrome.storage.sync.set({ "disabledThemes": [] });
+        return true;
+    }
+
+    return !disabled.includes(bookmarkId);
+}
+
+async function setBookmarkActiveState(bookmarkId, value) {
+    const disabled = (await chrome.storage.sync.get("disabledThemes")).disabledThemes;
+    if (disabled == undefined) disabled = []
+    if (value && disabled.includes(bookmarkId)) {
+        disabled.splice(disabled.indexOf(bookmarkId), 1);
+    }
+
+    if (!value && !disabled.includes(bookmarkId)) {
+        disabled.push(bookmarkId);
+    }
+
+    await chrome.storage.sync.set({ "disabledThemes": disabled });
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     switch (message.action) {
         case 'credentials':
@@ -93,6 +121,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             break
         case 'removeProblem':
             removeProblem(message.id, message.handle, message.problemId)
+            .then(res => sendResponse(res))
+            break
+        case 'getBookmarkActiveState':
+            getBookmarkActiveState(message.id)
+            .then(res => sendResponse(res))
+            break
+        case 'setBookmarkActiveState':
+            setBookmarkActiveState(message.id, message.value)
             .then(res => sendResponse(res))
             break
     }
